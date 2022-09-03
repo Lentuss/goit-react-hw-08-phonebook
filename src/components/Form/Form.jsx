@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import { addData } from '../../redux/phonebookOperations';
+import { addData } from '../../redux/phonebook/phonebookOperations';
 import {
   ContactForm,
+  Title,
   FormLabel,
   LabelTitle,
   FormInput,
@@ -52,6 +53,7 @@ const Form = () => {
       autocomplete="off"
       onSubmit={handleSubmit}
     >
+      <Title>Add new contact</Title>
       <FormLabel>
         <LabelTitle>Name</LabelTitle>
         <FormInput
@@ -79,7 +81,7 @@ const Form = () => {
         />
       </FormLabel>
 
-      <AddButton type="submit">+ Add to contacts</AddButton>
+      <AddButton type="submit">+ Add</AddButton>
     </ContactForm>
   );
 };

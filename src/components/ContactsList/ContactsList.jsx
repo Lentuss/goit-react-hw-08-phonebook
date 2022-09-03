@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { getData, removeData } from '../../redux/phonebookOperations';
+import { getData, removeData } from '../../redux/phonebook/phonebookOperations';
 
 import Filter from '../Filter';
 

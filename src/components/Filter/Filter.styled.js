@@ -11,7 +11,9 @@ export const FilterLabel = styled.label`
 
 export const FilterInput = styled.input`
   display: block;
-  border-radius: 5px;
-  padding: 5px;
   margin: 10px auto;
+  width: 420px;
+  padding: 10px;
+
+  border-radius: 5px;
 `;

@@ -6,9 +6,10 @@ const { colors } = theme;
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+  align-self: start;
 
-  padding: 20px;
+  padding: 30px;
 
   background-image: linear-gradient(
     to bottom,
@@ -16,15 +17,30 @@ export const ContactForm = styled.form`
     ${colors.mainGrey}
   );
   color: #c5c6c7;
+  box-shadow: 2px 2px 10px black;
+  border-radius: 10px;
+`;
+
+export const Title = styled.h1`
+  margin: 0 0 20px;
+  cursor: default;
+
+  color: ${colors.accent};
+  text-shadow: 3px 3px 3px ${colors.mainGrey}, 5px 5px 5px ${colors.textGrey};
+  font-size: 32px;
+  font-weight: bold;
 `;
 
 export const FormLabel = styled.label`
-  margin-bottom: 10px;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const LabelTitle = styled.span`
+  display: inline-block;
   color: ${colors.secondAccent};
-  margin-right: 20px;
+  margin: 10px 0;
 `;
 
 export const FormInput = styled.input`

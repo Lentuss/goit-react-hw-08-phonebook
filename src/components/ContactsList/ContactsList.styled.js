@@ -4,12 +4,19 @@ import theme from 'constants/theme';
 const { colors } = theme;
 
 export const Contacts = styled.div`
+  width: 40vw;
+  height: 100%;
+  padding: 30px;
+
   background-image: linear-gradient(
     to bottom,
-    ${colors.mainGrey} 50%,
-    ${colors.dark}
+    ${colors.dark} 50%,
+    ${colors.mainGrey}
   );
-  padding: 0 20px 20px;
+
+  box-shadow: 2px 2px 10px black;
+  border-radius: 10px;
+
   cursor: default;
 `;
 

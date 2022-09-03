@@ -6,6 +6,7 @@ const theme = {
     accent: '#66FCF1',
     secondAccent: '#45A29E',
     white: '#fff',
+    lightGreen: '#33ee7e',
   },
 };
 

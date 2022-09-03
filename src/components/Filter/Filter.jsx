@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import { onFilter } from 'redux/phonebookActions';
+import { onFilter } from 'redux/phonebook/phonebookActions';
 
 import { FilterLabel, FilterInput } from './Filter.styled';
 

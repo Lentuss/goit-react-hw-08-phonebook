@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { items, filter } from './phonebookReducer';
+import { items, filter } from './phonebook/phonebookReducer';
 
 const contacts = combineReducers({ items, filter });
 
