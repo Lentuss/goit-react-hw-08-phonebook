@@ -5,20 +5,22 @@ import theme from '../../constants/theme';
 const { colors } = theme;
 
 export const MenuContainer = styled.div`
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  text-align: center;
 `;
 
 export const LogOutBtn = styled.button`
   display: inline-flex;
   align-items: center;
   height: 30px;
-  padding: 10px 30px;
+  padding: 10px 10px;
 
   text-decoration: none;
   text-transform: uppercase;
 
   border: 2px solid ${colors.white};
-  border-radius: 40px;
+  border-radius: 20px;
   mix-blend-mode: difference;
 
   cursor: pointer;
@@ -34,6 +36,7 @@ export const User = styled.p`
   align-self: center;
   margin-right: 20px;
 
+  font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
   color: ${colors.white};

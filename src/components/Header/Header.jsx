@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 // import {useLocation } from 'react-router-dom'
 // import PropTypes from 'prop-types'
 import logo from '../../assets/logo1.png';
@@ -13,6 +14,8 @@ import {
 } from './Header.styled';
 
 const Header = props => {
+  const user = useSelector(state => state.contacts.authSlice); ///надо задать нулевое
+  console.log(user);
   return (
     <HeaderSection>
       <Logo src={logo} alt="logo" />
@@ -21,7 +24,7 @@ const Header = props => {
         <NavigationLink to="/contacts">contacts</NavigationLink>
       </NavBar>
       <AuthBar>
-        <UserMenu email="hello@hello" />
+        {user.isLoggedIn && <UserMenu email={user.user.email} />}
         <NavigationLink to="/register">register</NavigationLink>
         <NavigationLink to="/login">login</NavigationLink>
       </AuthBar>
