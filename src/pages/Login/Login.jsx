@@ -1,17 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+// import PropTypes from 'prop-types'
 
 import { logIn } from 'redux/auth/authOperations';
 import { Container, Video } from './LogIn.styled';
 import video from '../../assets/video/video.mp4';
 import AuthForm from 'components/AuthForm';
 
-const LogIn = () => {
+const Login = props => {
   const page = useLocation().pathname;
   const dispatch = useDispatch();
 
-  const getData = (email, password) => {
+  const getData = (name, email, password) => {
     dispatch(logIn({ email, password }));
     console.log('email ', email, 'password', password);
   };
@@ -27,4 +28,6 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+Login.propTypes = {};
+
+export default Login;

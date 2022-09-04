@@ -15,6 +15,7 @@ export const items = createReducer([], {
   [addData.rejected]: (state, action) => action.payload,
   [removeData.pending]: (state, { payload: contact }) => state,
   [removeData.fulfilled]: (state, { payload: contact }) =>
-    current(state).filter(item => contact.id !== item.id),
+    console.log(current(state)),
+  // current(state).filter(item => contact.id !== item.id),
   [removeData.rejected]: (state, action) => action.payload,
 });
