@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
+import PropTypes from 'prop-types';
 
 import { MenuContainer, LogOutBtn, User } from './UserMenu.styled';
 

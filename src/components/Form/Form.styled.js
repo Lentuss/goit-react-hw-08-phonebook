@@ -6,7 +6,6 @@ const { colors } = theme;
 export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
-  /* align-items: flex-end; */
   align-self: start;
 
   padding: 30px;

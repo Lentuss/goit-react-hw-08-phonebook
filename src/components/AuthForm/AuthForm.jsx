@@ -11,10 +11,6 @@ import {
 } from './AuthForm.styled';
 
 const AuthForm = ({ text, page, onSubmit }) => {
-  //   let inputName;
-  //   let inputEmail;
-  //   let inputPassword;
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,42 +19,19 @@ const AuthForm = ({ text, page, onSubmit }) => {
     const { name, value } = e.currentTarget;
     switch (name) {
       case 'name':
-        console.log(value);
         return setName(value);
       case 'email':
         return setEmail(value);
       case 'password':
-        console.log(value);
-
         return setPassword(value);
       default:
         return;
     }
   };
 
-  //   const handleInput = e => {
-  //     const { name, value } = e.currentTarget;
-  //     switch (name) {
-  //       case 'name':
-  //         inputName = value;
-  //         break;
-  //       case 'email':
-  //         inputEmail = value;
-  //         break;
-  //       case 'password':
-  //         inputPassword = value;
-  //         break;
-
-  //       default:
-  //         break;
-  //     }
-  //   };
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit(name, email, password);
-    // setName('');
-    // setEmail('');
-    // setPassword('');
   };
   return (
     <Form
@@ -102,7 +75,6 @@ const AuthForm = ({ text, page, onSubmit }) => {
         <FormInput
           type="password"
           name="password"
-          //   pattern="[a-z]{1,15}"
           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
           title="Password must contain at least one lowercase letter, at least one uppercase letter, at least one numeric value and at least one special symbol"
           onChange={handleInput}
@@ -123,6 +95,7 @@ const AuthForm = ({ text, page, onSubmit }) => {
 AuthForm.propTypes = {
   text: PropTypes.string.isRequired,
   page: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default AuthForm;

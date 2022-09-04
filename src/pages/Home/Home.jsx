@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Video, Message } from './Home.styled';
 import videoLayout from '../../assets/video/videoLayout.mp4';
 
-const Home = props => {
+const Home = () => {
   return (
     <Container>
       <Video src={videoLayout} autoPlay muted loop></Video>;

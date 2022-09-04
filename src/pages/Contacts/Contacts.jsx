@@ -1,15 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 import Form from 'components/Form';
 import ContactsList from 'components/ContactsList';
 
 import { Container, BookContainer } from './Contacts.styled';
 
-const Contacts = props => {
+const Contacts = () => {
   return (
     <Container>
-      {/* <Title>Phonebook</Title> */}
       <BookContainer>
         <Form />
         <ContactsList title={'Contacts'} />
@@ -17,7 +15,5 @@ const Contacts = props => {
     </Container>
   );
 };
-
-Contacts.propTypes = {};
 
 export default Contacts;

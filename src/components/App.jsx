@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchUser } from 'redux/auth/authOperations';
 
 import PrivateRoute from './Routes/PrivateRoute';
@@ -10,10 +10,12 @@ const Layout = lazy(() => import('../components/Layout/Layout'));
 const Home = lazy(() => import('../pages/Home/Home'));
 const Contacts = lazy(() => import('../pages/Contacts/Contacts'));
 const Register = lazy(() => import('../pages/Register/Register'));
-const LogIn = lazy(() => import('../pages/LogIn/LogIn'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 const App = () => {
-  // const isLogged = useSelector(state => state.contacts.authSlice.isLoggedIn);
+  const isLogged = useSelector(state => state.contacts.authSlice.isLoggedIn);
+  console.log(isLogged);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUser());
@@ -44,10 +46,11 @@ const App = () => {
             path="/login"
             element={
               <PublicRoute restricted>
-                <LogIn />
+                <LoginPage />
               </PublicRoute>
             }
           />
+          <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
     </Suspense>

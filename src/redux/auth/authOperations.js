@@ -15,7 +15,6 @@ const token = {
 
 export const register = createAsyncThunk('auth/register', async credentials => {
   try {
-    console.log(credentials);
     const { data } = await axios.post('/users/signup', credentials);
     token.set(data.token);
     if (data.token) {
@@ -41,7 +40,6 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
     Notify.failure(
       'You are not logged in. Please confirm the entered data is correct'
     );
-    console.log(error.message);
   }
 });
 

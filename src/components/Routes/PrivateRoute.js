@@ -5,7 +5,9 @@ import { PropTypes } from 'prop-types';
 
 const PrivateRoute = ({ children }) => {
   const isLoggedIn = useSelector(state => state.contacts.authSlice.isLoggedIn);
-  Notify.warning('Log-in or create new account, please');
+  if (!isLoggedIn) {
+    Notify.warning('Log-in or create new account to continue');
+  }
   return isLoggedIn ? children : <Navigate to="/login" replace />;
 };
 

@@ -13,7 +13,6 @@ const Register = () => {
 
   const getData = (name, email, password) => {
     dispatch(register({ name, email, password }));
-    console.log('name ', name, 'email ', email, 'password', password);
   };
 
   return (
