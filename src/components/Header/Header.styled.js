@@ -13,6 +13,7 @@ export const HeaderSection = styled.header`
   display: flex;
   align-items: center;
   width: calc((100% - 100px));
+  max-width: 1628px;
   padding: 30px 50px;
 
   color: ${colors.white};
