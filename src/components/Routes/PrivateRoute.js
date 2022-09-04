@@ -4,7 +4,12 @@ import { Notify } from 'notiflix';
 import { PropTypes } from 'prop-types';
 
 const PrivateRoute = ({ children }) => {
-  const isLoggedIn = useSelector(state => state.contacts.authSlice.isLoggedIn);
+  const stateLoggedIn = useSelector(
+    state => state.contacts.authSlice.isLoggedIn
+  );
+  const isLoggedIn = JSON.parse(localStorage.getItem('isLogged'))
+    ? true
+    : stateLoggedIn;
   if (!isLoggedIn) {
     Notify.warning('Log-in or create new account to continue');
   }

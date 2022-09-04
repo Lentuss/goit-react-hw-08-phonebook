@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const authSlice = createSlice({
-  name: 'auth',
+  name: 'authSlice',
   initialState,
   extraReducers: {
     [register.pending]: (state, action) => state,
@@ -40,7 +40,5 @@ const authSlice = createSlice({
     [fetchUser.rejected]: (state, action) => action.payload,
   },
 });
-
-export const getIsLoggedIn = state => state.auth.isLoggedIn;
 
 export default authSlice.reducer;

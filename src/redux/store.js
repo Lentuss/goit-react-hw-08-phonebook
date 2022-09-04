@@ -4,10 +4,8 @@ import authSlice from './auth/authSlise';
 
 const contacts = combineReducers({ items, filter, authSlice });
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     contacts,
   },
 });
-
-export default store;

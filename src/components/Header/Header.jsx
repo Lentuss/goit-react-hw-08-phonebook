@@ -19,12 +19,18 @@ const Header = () => {
       <Logo src={logo} alt="logo" />
       <NavBar>
         <NavigationLink to="/">home</NavigationLink>
-        <NavigationLink to="/contacts">contacts</NavigationLink>
+        {user.isLoggedIn && (
+          <NavigationLink to="/contacts">contacts</NavigationLink>
+        )}
       </NavBar>
       <AuthBar>
         {user.isLoggedIn && <UserMenu email={user.user.email} />}
-        <NavigationLink to="/register">register</NavigationLink>
-        <NavigationLink to="/login">login</NavigationLink>
+        {!user.isLoggedIn && (
+          <>
+            <NavigationLink to="/register">register</NavigationLink>
+            <NavigationLink to="/login">login</NavigationLink>
+          </>
+        )}
       </AuthBar>
     </HeaderSection>
   );

@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchUser } from 'redux/auth/authOperations';
 
 import PrivateRoute from './Routes/PrivateRoute';
@@ -14,8 +14,6 @@ const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
 const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 const App = () => {
-  const isLogged = useSelector(state => state.contacts.authSlice.isLoggedIn);
-  console.log(isLogged);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUser());
