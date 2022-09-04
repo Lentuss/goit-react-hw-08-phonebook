@@ -65,7 +65,7 @@ const Form = () => {
     const contact = checkExistData();
     if (contact) {
       dispatch(addData(contact));
-      e.currentTarget.reset();
+      // e.currentTarget.reset();
     } else {
       Notify.failure('Contact not added. Please, try again ))');
     }
