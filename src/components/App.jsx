@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import LogIn from 'pages/LogIn/LogIn';
+// import LogIn from 'pages/LogIn/LogIn';
 
 const Layout = lazy(() => import('../components/Layout/Layout'));
 const Home = lazy(() => import('../pages/Home/Home'));
@@ -17,7 +17,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<LogIn />} />
+          {/* <Route path="/login" element={<LogIn />} /> */}
         </Route>
       </Routes>
     </Suspense>
