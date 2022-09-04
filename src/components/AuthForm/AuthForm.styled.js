@@ -6,13 +6,8 @@ const { colors } = theme;
 export const Form = styled.form`
   position: absolute;
   top: 180px;
-  left: ${({ page }) => (page === '/register' ? '110px' : '110px')};
-  ///////////////////////////////////////////////////////////////////////
+  left: 110px;
 
-  transform: translateX(${({ page }) => (page === '/register' ? '100%' : '0')});
-
-  transition: transform 2000ms linear;
-  /////////////////////////////////////////////////////////////////////////////
   display: flex;
   flex-direction: column;
 

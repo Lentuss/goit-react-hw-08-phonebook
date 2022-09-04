@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { Notify } from 'notiflix';
 
 import { addData } from '../../redux/phonebook/phonebookOperations';
 import {
@@ -31,20 +32,43 @@ const Form = () => {
     }
   };
 
+  const checkExistData = () => {
+    const names = contacts.map(contact => {
+      if (contact.name) {
+        return contact.name.toLowerCase();
+      } else return contact;
+    });
+
+    const numbers = contacts.map(contact => {
+      if (contact.number) {
+        return contact.number;
+      } else return contact;
+    });
+
+    if (inputName) {
+      if (names.includes(inputName.toLowerCase())) {
+        Notify.info(`Please, enter unique name. ${inputName} is already exist`);
+        return;
+      } else if (numbers.includes(inputNumber)) {
+        Notify.info(
+          `Please, enter unique number. ${inputNumber} is already exist`
+        );
+        return;
+      } else {
+        return { name: inputName, number: inputNumber };
+      }
+    }
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
-
-    const names = contacts.map(contact => contact.name.toLowerCase());
-
-    if (names.includes(inputName.toLowerCase())) {
-      alert(`Please, enter unique name. ${inputName} is already exist`);
-      return;
-    } else {
-      const contact = { name: inputName, number: inputNumber };
+    const contact = checkExistData();
+    if (contact) {
       dispatch(addData(contact));
+      e.currentTarget.reset();
+    } else {
+      Notify.failure('Contact not added. Please, try again ))');
     }
-
-    e.currentTarget.reset();
   };
 
   return (
