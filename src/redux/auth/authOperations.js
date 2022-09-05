@@ -41,7 +41,7 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
     return data;
   } catch (error) {
     Notify.failure(
-      'You are not logged in. Please confirm the entered data is correct'
+      'You are not logged in. Please, check if the entered data is correct'
     );
   }
 });
